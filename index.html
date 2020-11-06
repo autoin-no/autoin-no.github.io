@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap compiled with our colors -->
+    <link rel="stylesheet" href="dist/v1/styles.css">
+    <!-- media="all and (not (prefers-color-scheme: dark))"
+    <link rel="stylesheet" media="all and (prefers-color-scheme: dark)" href="dist/v1/styles_dark.css" -->
+
+
+    <!-- AutoIn Custom CSS for style guide -->
+    <!-- Not meant for use outside of style guide -->
+    <style>
+
+        figure.sg_color-preview { width: 7em; margin: 1em; display: inline-block; }
+        figure.sg_color-preview div { border-radius: 50%; width: 6em; height: 6em; margin-bottom: 1em; margin-left: 0.5em; }
+        figure.sg_color-preview figcaption { text-align: center; font-size: 90%; }
+    </style>
+
+    <title>AutoIn - StyleGuide</title>
+</head>
+<body>
+    <main class="container">
+
+        <h1 class="display-2">AutoIn - web styleguide</h1>
+        <p class="lead">html/css version - v1.0-beta</p>
+
+
+        <div class="accordion" id="accordionTop">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  NOTE 1: This does <u>not</u> aim to follow design from Thomas 100%
+              </button></h2>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionTop">
+              <div class="card-body text-muted">
+                  This style guide aims to try to improve and simplify the style guide proposed by Thomas.
+                  Notably this also has been made as a Bootstrap CSS theme in order to much more easily use ready made source code from here and from
+                  <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">getbootstrap.com</a>.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  NOTE 2: This is a living style guide, please report issues
+              </button></h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTop">
+              <div class="card-body text-muted">
+                  If you encounter issues with any boostrap html, please report or suggest fix. The CSS is intended to be improved over time, while the html stays the same <em>(with exception of Boostrap v5 changes)</em>.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Font - Poppins:</p>
+
+                <h1>H1 Lorem ipsum</h1>
+                <h2>H2 Lorem ipsum</h2>
+                <h3>H3 Lorem ipsum</h3>
+                <h4>H4 Lorem ipsum</h4>
+                <h5>H5 Lorem ipsum</h5>
+                <h6>H6 Lorem ipsum</h6>
+                <p>P Paragraph text, <em>italic</em>, <strong>bold</strong></p>
+                <p class="lead">P.lead Paragraph lead text</p>
+
+            </div>
+            <div class="col-sm">
+                <p class="lead">Main Colors:</p>
+
+                <figure class="sg_color-preview">
+                    <div style="background-color: var(--primary)"></div>
+                    <figcaption>--primary</figcaption>
+                </figure>
+                <figure class="sg_color-preview">
+                    <div style="background-color: var(--secondary)"></div>
+                    <figcaption>--secondary</figcaption>
+                </figure>
+                <figure class="sg_color-preview">
+                    <div style="background-color: var(--dark)"></div>
+                    <figcaption>--dark</figcaption>
+                </figure>
+                <figure class="sg_color-preview">
+                    <div style="background-color: var(--light)"></div>
+                    <figcaption>--light</figcaption>
+                </figure>
+                <figure class="sg_color-preview sg_color-preview-small">
+                    <div style="background-color: var(--success)"></div>
+                    <figcaption>--success</figcaption>
+                </figure>
+                <figure class="sg_color-preview sg_color-preview-small">
+                    <div style="background-color: var(--danger)"></div>
+                    <figcaption>--danger</figcaption>
+                </figure>
+                <figure class="sg_color-preview sg_color-preview-small">
+                    <div style="background-color: var(--warning)"></div>
+                    <figcaption>--warning</figcaption>
+                </figure>
+                <figure class="sg_color-preview sg_color-preview-small">
+                    <div style="background-color: var(--info)"></div>
+                    <figcaption>--info</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Alerts <span class="text-muted">for user feedback from server</span>:</p>
+
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    A simple danger alert — Beware!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    A simple success alert — Congratulations!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+
+                <div class="alert alert-info" role="alert">
+                  A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+                </div>
+
+                <div class="accordion" id="accordionAlert">
+                  <div class="card">
+                    <div class="card-header" id="headingAlert">
+                      <h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseAlert" aria-expanded="true" aria-controls="collapseAlert">
+                          Developer Note: Mainly for use on server feedback on post back
+                      </button></h2>
+                    </div>
+                    <div id="collapseAlert" class="collapse" aria-labelledby="headingAlert" data-parent="#accordionAlert">
+                      <div class="card-body text-muted">
+                          Alerts should mainly be used for server feedback when needed if something went wrong or needs some more work. For client side validation use Boostrap form features instead as shown example of below if you click "Register Bruker".
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Buttons <span class="text-muted">for standard form handling</span>:</p>
+
+                <!--
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-primary" disabled>Primary</button>
+                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-secondary" disabled>Secondary</button>
+
+
+                <br>
+                <br>
+                -->
+
+
+                <button type="button" class="btn btn-outline-primary">Primary</button>
+                <button type="button" class="btn btn-outline-primary" disabled>Primary</button>
+                <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                <button type="button" class="btn btn-outline-secondary" disabled>Secondary</button>
+
+                <br><br>
+                <p class="lead">Responsive button "actionbar" <span class="text-muted">with dropdown for advanced options</span>:</p>
+
+                <div class="row no-gutters justify-content-between">
+                    <div class="col-md-10">
+                        <button class="btn btn-primary" type="button">Lag oppgave</button>
+                        <button class="btn btn btn-primary" type="button">Klargjør</button>
+                        <button class="btn btn btn-primary" type="button">Bilen er solgt</button>
+                    </div>
+
+                    <!-- see: https://getbootstrap.com/docs/4.5/components/dropdowns/ -->
+                    <div class="col-md-2 dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Avansert
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                            <h6 class="dropdown-header">Transport</h6>
+                            <button class="dropdown-item" type="button">Bestill transport</button>
+                            <button class="dropdown-item" type="button">Merk som levert</button>
+                            <div class="dropdown-divider"></div>
+                            <h6 class="dropdown-header">Administrasjon</h6>
+                            <button class="dropdown-item" type="button">Sjekk ut kjøretøy</button>
+                            <button class="dropdown-item" type="button">Endre Status</button>
+                            <button class="dropdown-item" type="button">Slå sammen ordre</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Themes <span class="text-muted">for process use</span>:</p>
+
+                <p>The AutoIn theme defines three additional color themes for usage with processes:</p>
+                <ul>
+                    <li><code>start</code> - An process that can be started</li>
+                    <li><code>stop</code> - An process that is in progress and can be stopped</li>
+                    <li><code>done</code> - An process that is done</li>
+                </ul>
+
+                <div class="accordion" id="accordionTheme">
+                  <div class="card">
+                    <div class="card-header" id="headingTheme">
+                      <h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTheme" aria-expanded="true" aria-controls="collapseTheme">
+                          Developer Note: Use standard Boostrap HTML for badges and buttons
+                      </button></h2>
+                    </div>
+                    <div id="collapseTheme" class="collapse" aria-labelledby="headingTheme" data-parent="#accordionTheme">
+                      <div class="card-body text-muted">
+                          The color themes are using a <a href="https://getbootstrap.com/docs/4.5/getting-started/theming/#add-to-map" target="_blank">official way to extend</a> boostrap so you can use any kind of Boostrap html just with the themes classes changed for the once above <em>(See below for examples)</em>.
+                          Should be used for badges and buttons as shown with examples below, please don't use for alerts as alerts should convey rather severity like danger/warning/info/sucess after some action.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Process Buttons <span class="text-muted">for start/stop/done/* on processes</span>:</p>
+
+
+
+                <button type="button" class="btn btn-start">Start</button>
+                <button type="button" class="btn btn-start" disabled>Start</button>
+                <button type="button" class="btn btn-stop">Stop</button>
+                <button type="button" class="btn btn-stop" disabled>Stop</button>
+                <button type="button" class="btn btn-done">Done</button>
+                <button type="button" class="btn btn-done" disabled>Done</button>
+
+<!--
+                <br><br>
+                <button type="button" class="btn btn-outline-start">Start</button>
+                <button type="button" class="btn btn-outline-start" disabled>Start</button>
+                <button type="button" class="btn btn-outline-stop">Stop</button>
+                <button type="button" class="btn btn-outline-stop" disabled>Stop</button>
+                <button type="button" class="btn btn-outline-done">Done</button>
+                <button type="button" class="btn btn-outline-done" disabled>Done</button>
+-->
+                <br><br><br>
+                <p>Alternatively for Product Process Buttons, large and/or block buttons can be used for optimal tablet usage:</p>
+
+                <button type="button" class="btn btn-start btn-lg btn-block">
+                    Start Process
+                </button>
+                <button type="button" class="btn btn-stop btn-lg btn-block">
+                    Stop Process
+                </button>
+
+                <button type="button" class="btn btn-done btn-lg btn-block">
+                    Process Done
+                </button>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Status badges <span class="text-muted">for client/track&trace-users who can't interact with them</span>:</p>
+
+                <span class="badge badge-start">
+                    Process <span class="text-muted">not started</span>
+                </span>
+                <span class="badge badge-stop">
+                    Process <span class="text-muted">in progress</span>
+                </span>
+                <span class="badge badge-done">
+                    Process <span class="text-muted">done</span>
+                </span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Form fields:</p>
+
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck3">
+                      <label class="custom-control-label" for="customCheck3">Active</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck4" disabled>
+                      <label class="custom-control-label" for="customCheck4">Inactive</label>
+                    </div>
+
+                      <br><br>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                      </div>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+                        <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+                      </div>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                        <label class="custom-control-label" for="customSwitch3">Toggle this switch element</label>
+                      </div>
+
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" disabled id="customSwitch4" checked>
+                        <label class="custom-control-label" for="customSwitch4">Disabled switch element</label>
+                      </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="validationCustom09">Activ</label>
+                      <input type="text" class="form-control" id="validationCustom09" value="Fagsjef" required>
+
+                      <label for="validationCustom08">Inactiv</label>
+                      <input type="text" class="form-control" id="validationCustom08" value="Fagsjef" required disabled>
+
+                      <label for="validationCustom07">Readonly</label>
+                      <input type="text" class="form-control" id="validationCustom07" value="Fagsjef" required readonly>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Form fields <span class="text-muted">with clientside validation example</span>:</p>
+
+                <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom01">Stilling</label>
+                      <input type="text" class="form-control" id="validationCustom01" value="Fagsjef" required>
+                      <div class="invalid-feedback">Vennligst fyll inn Stilling.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom02">Firmanavn</label>
+                      <input type="text" class="form-control" id="validationCustom02" value="BMW Norge" required>
+                      <div class="invalid-feedback">Vennligst fyll inn ett firmanavn.</div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom03">Stedsnavn</label>
+                      <input type="text" class="form-control" id="validationCustom03" required>
+                      <div class="invalid-feedback">Vennligst fyll riktig stedsnavn.</div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label for="validationCustom05">Postnummer</label>
+                      <input type="number" class="form-control" id="validationCustom05" min="1" max="9999"required>
+                      <div class="invalid-feedback">Vennligst fyll ut ett gyldig postnummer.</div>
+                    </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="validationCustom04">Kontaktperson</label>
+                        <select class="custom-select" id="validationCustom04" required>
+                          <option selected disabled value="">Velg en:</option>
+                          <option>Tore</option>
+                          <option>Harald</option>
+                          <option>Anders</option>
+                        </select>
+                        <div class="invalid-feedback">Vennligst velg en kontaktperson.</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+                        <label class="custom-control-label" for="customCheck1">Jeg godkjenner bruk av mine data</label>
+                        <div class="invalid-feedback">Du må godkjenne lisensvilkårene for å kunne opprette bruker</div>
+                      </div>
+                  </div>
+                    <div class="mb-3">
+                      <label for="validationTextarea">Kommentar</label>
+                      <textarea class="form-control" id="validationTextarea" placeholder="Eksempel kommentar"></textarea>
+                      <div class="invalid-feedback">Vennligst fyll inn kommentar</div>
+                    </div>
+
+                    <a href="#" title="Avbryt og kansellere oppretting av bruker" class="mr-4">Avbryt</a>
+                    <button class="btn btn-outline-primary" type="submit" title="Register bruker så sant skjema er riktig fyllt inn">Register bruker</button>
+                </form>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Tables <span class="text-muted">for order views</span>:</p>
+                <p>Transport:</p>
+                <table class="table table-order table-borderless table-hover">
+                  <thead>
+                    <tr>
+                        <th scope="col" class="d-none d-lg-table-cell">#</th><th scope="col">reg/VIN</th><th scope="col">Hentested</th><th scope="col">Leveringssted</th><th scope="col">Type</th><th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <th scope="row" class="d-none d-lg-table-cell">1</th><td><span class="text-start" style="font-size-adjust:0.66;">●</span> &nbsp;DJ99999</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X1</td><td class="text-start">Klar til transport</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-none d-lg-table-cell">2</th><td><span class="text-start" style="font-size-adjust:0.66;">●</span> &nbsp;DJ88888</td><td>BMW Norge</td><td>AutoIn Billingstad</td><td>X5</td><td class="text-start">Klar til transport</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-none d-lg-table-cell">3</th><td><span class="text-stop" style="font-size-adjust:0.66;">●</span> &nbsp;DJ77777</td><td>BMW Norge</td><td>AutoIn Røyken</td><td>X3</td><td class="text-stop">Under transport</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p>Ordre:</p>
+                <table class="table table-order table-borderless table-hover">
+                  <thead>
+                    <tr>
+                        <th scope="col" class="d-none d-lg-table-cell">#</th><th scope="col">reg/VIN</th><th scope="col">Oppdragsgiver</th><th scope="col">Terminal</th><th scope="col">Type</th><th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <th scope="row" class="d-none d-lg-table-cell">1</th><td>DJ99999</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X1</td><td>Ny</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-none d-lg-table-cell">2</th><td>DJ88888</td><td>BMW Norge</td><td>AutoIn Billingstad</td><td>X5</td><td>Klar til produksjon</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-none d-lg-table-cell">3</th><td>DJ77777</td><td>BMW Norge</td><td>AutoIn Røyken</td><td>X3</td><td>Under transport</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p>Terminal:</p>
+                <table class="table table-order table-borderless table-hover">
+                  <thead>
+                    <tr>
+                        <th scope="col" class="d-none d-lg-table-cell">#</th><th scope="col">reg/VIN</th><th scope="col">Oppdragsgiver</th><th scope="col">Terminal</th><th scope="col">Type</th><th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <th scope="row" class="d-none d-lg-table-cell">1</th><td>DJ99999</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X1</td><td class="text-start">Levert Terminal</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-none d-lg-table-cell">2</th><td>DJ88888</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X5</td><td class="text-stop">Klar til produksjonlinje / Vask</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-none d-lg-table-cell">3</th><td>DJ77777</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X3</td><td class="text-done">Ferdig produsert</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <hr>
+
+    </main>
+
+    <!-- Optional JavaScript (contains Boostrap js. jQuery and Popper.js as needed by Bootstrap JS) -->
+    <script src="dist/v1/footer.js"></script>
+
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+</body>
+</html>
