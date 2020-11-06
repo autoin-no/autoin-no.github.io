@@ -1,0 +1,146 @@
+// Overloading CSS
+// @todo See if this can be changed to use variables or otherwise
+
+
+body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+    min-width: 12rem;
+}
+
+body nav {
+    font-weight: 400;
+}
+
+body .badge {
+    width: 100%;
+    max-width: 22.5rem;
+}
+
+.table-order {
+    border-collapse: separate;
+    border-spacing: 0 0.6rem;
+
+    thead th {
+        padding-bottom: 0;
+        font-weight: 300;
+        font-size: 110%;
+        color: $gray-700;
+    }
+
+    tbody {
+
+        tr {
+            background-color: $gray-100
+        }
+
+        th {
+            font-weight: normal;
+            color: $gray-700;
+        }
+
+        td, th {
+            border-right: 0.1rem solid $primary !important;
+        }
+
+        td:last-child, th:last-child {
+            border-right: 0 !important;
+        }
+    }
+}
+
+body .badge .text-muted, body .btn .text-muted {
+    opacity: 0.7;
+    color: inherit !important;
+}
+
+body label {
+    color: $gray-700;
+}
+
+// Increase font and border width on outline buttons
+.btn[class*="btn-outline-"]:not(.btn-toggle):not(.btn-toggle-circle) {
+    font-weight: 500;
+    border-width: 2px;
+}
+// Reset on split dropdown
+.btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn { border-left: 1px;}
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn { border-right: 1px; }
+
+// Style SVG icons to process buttons added in JS
+.btn svg, .badge svg {
+    margin-right: 0.05rem;
+    margin-left: -0.5em;
+}
+
+// Some animation feedback on icons on first load, hover and focus
+.btn:not(:disabled):not(.disabled) svg.bi-arrow-clockwise {
+    animation: rotation 5s 1 ease;
+}
+
+.btn:not(:disabled):not(.disabled):hover svg.bi-arrow-clockwise,
+.btn:not(:disabled):not(.disabled):focus svg.bi-arrow-clockwise {
+    animation: rotation 5s infinite ease;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(359deg)
+    }
+}
+
+.btn:not(:disabled):not(.disabled):hover svg.bi-play, .btn:not(:disabled):not(.disabled):focus svg.bi-play {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes shake {
+    10%, 30%, 50%, 70%, 90% {
+        transform: translate3d(-1px, 0, 0)
+    }
+    20%, 40%, 60%, 80% {
+        transform: translate3d(1px, 0, 0)
+    }
+}
+
+/**
+ * Responsive adjustments to buttons and button groups.
+ */
+@media (max-width: 992px) {
+    // -lg, breakpoint 992px, responsive container size 960px
+    body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+        min-width: 10rem;
+    }
+
+    .unsticky-lg {
+        position: relative;
+    }
+}
+
+@media (max-width: 768px) {
+    // -md, breakpoint 768px, responsive container size 720px
+    div[class*="col-md-"] .btn[class*="btn-outline-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new),
+    div[class*="col-md-"] .btn[class*="btn-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+        width: 95%;
+        margin-bottom: 0.2em;
+        margin-top: 0.2em;
+    }
+
+    .unsticky-md {
+        position: relative;
+    }
+}
+
+@media (max-width: 576px) {
+    // -sm, breakpoint 576px, responsive container size 540px
+    .btn[class*="btn-outline-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new),
+    .btn[class*="btn-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+        width: 100%;
+        margin-bottom: 0.2em;
+        margin-top: 0.2em;
+    }
+
+    .unsticky-sm {
+        position: relative;
+    }
+}

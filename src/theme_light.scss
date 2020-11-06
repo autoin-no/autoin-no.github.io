@@ -1,0 +1,10 @@
+@import "inc/_variables.scss";
+
+// Align some other colors to theme colors
+$border-color: $light;
+$table-head-bg: $light;
+$table-dark-bg: $dark;
+
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "inc/_custom.scss";

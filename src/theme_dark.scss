@@ -1,0 +1,12 @@
+@import "inc/_variables.scss";
+
+// Some first overloading for dark theme
+$body-bg:                   #212529;
+$body-color:                #fff;
+
+$border-color: #dee2e6;
+$table-head-bg: #dee2e6;
+$table-dark-bg: #495057;
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "inc/_custom.scss";

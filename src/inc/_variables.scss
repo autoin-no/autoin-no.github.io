@@ -1,0 +1,55 @@
+// Test out some by default disabled boostrap features
+$enable-gradients: true;
+$enable-responsive-font-sizes: true;
+
+$blue: #428dfc;
+$red: #e94a47;
+$green: #2fa54a;
+
+$light: #f3f3f3;
+// @todo Reconsider this one (this is a dark purple color from original Thomas style, HR wants something else)
+$dark: #23286b;
+
+
+// Custom themes to semantically define the cases for processes, in order to be able to add icons and more.
+$theme-colors: (
+        "start": $blue,
+        "stop": $red,
+        "done": $green,
+);
+
+
+$font-family-sans-serif: 'Poppins', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-weight-base: 300;
+$headings-font-weight: 400;
+
+$spacer: 1.1rem;
+$navbar-nav-link-padding-x: 1rem;
+
+
+$btn-border-radius: 2rem;
+$btn-border-radius-lg: 3rem;
+$btn-border-radius-sm: 1rem;
+$btn-disabled-opacity: .55;
+$btn-padding-y: .7rem;
+$btn-padding-x: 2rem;
+$btn-padding-y-lg: .75rem;
+$btn-padding-x-lg: 2.5rem;
+
+$navbar-toggler-border-radius: .25rem;
+
+// switch and other custom controller size
+$custom-control-indicator-size:        1.2rem;// 1rem
+$custom-switch-width:                  $custom-control-indicator-size * 2;// * 1.75
+
+$badge-font-size: 80%;
+$badge-font-weight: 500;
+$badge-padding-y: .4em;
+$badge-padding-x: .8em;
+
+$alert-color-level: 0;
+
+$close-text-shadow: none;
+$close-font-weight: $font-weight-base;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
