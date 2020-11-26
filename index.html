@@ -27,7 +27,7 @@
 
         <h1 class="display-2">AutoIn - web styleguide</h1>
         <p class="lead">
-            html/css version - v1.0-beta2
+            html/css version - v1.0-rc1
             <a href="https://github.com/autoin-no/autoin-no.github.io" target="_blank" class="text-secondary small float-right">
                 View source on GitHub
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-right-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -38,39 +38,24 @@
         </p>
 
 
-        <div class="accordion" id="accordionTop">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  NOTE 1: This does <u>not</u> aim to follow design from Thomas 100%
-              </button></h2>
-            </div>
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionTop">
-              <div class="card-body text-muted">
-                  This style guide aims to try to improve and simplify the style guide proposed by Thomas.
-                  Notably this also has been made as a Bootstrap CSS theme in order to much more easily use ready made source code examples (<a href="https://github.com/autoin-no/autoin-no.github.io" target="_blank">
-                      View source on GitHub
-                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-right-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                        <path fill-rule="evenodd" d="M5.172 10.828a.5.5 0 0 0 .707 0l4.096-4.096V9.5a.5.5 0 1 0 1 0V5.525a.5.5 0 0 0-.5-.5H6.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                      </svg>
-                  </a>) and from the <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">official boostrap documentation</a>.
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  NOTE 2: This is a living style guide, please report issues
-              </button></h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTop">
-              <div class="card-body text-muted">
-                  If you encounter issues with any boostrap html, please report or suggest fix. The CSS is intended to be improved over time, while the html stays the same <em>(with exception of Boostrap v5 changes, but for that theme here will be bumped to v2)</em>.
-              </div>
-            </div>
-          </div>
-        </div>
+        <p class="text-right"><button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#globalExample" aria-expanded="false" aria-controls="globalExample">Developer intro</button></p>
+        <div class="collapse" id="globalExample"><div class="card card-body">
+            <h5>NOTE 1: This does <u>not</u> aim to follow design from Thomas 100%</h5>
+            <p>
+                This style guide aims to try to improve and simplify the style guide proposed by Thomas, so when in doubt please follow this one.
+                Notably this also has been made as a Bootstrap CSS theme in order to much more easily use ready made source code examples (<a href="https://github.com/autoin-no/autoin-no.github.io" target="_blank">
+                View source on GitHub
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-right-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                  <path fill-rule="evenodd" d="M5.172 10.828a.5.5 0 0 0 .707 0l4.096-4.096V9.5a.5.5 0 1 0 1 0V5.525a.5.5 0 0 0-.5-.5H6.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
+                </svg></a>) and from the <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">official bootstrap documentation</a>.
+            </p>
+            <h5>NOTE 2: This is a living style guide, please report issues or propose fixes on Github</h5>
+            <p>
+                If you encounter issues with any bootstrap html, please report or suggest fix.
+                The CSS is intended to be improved over time, while the html stays pure bootstrap html source code.
+            </p>
+        </div></div>
 
         <hr>
 
@@ -149,20 +134,15 @@
                   A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
                 </div>
 
-                <div class="accordion" id="accordionAlert">
-                  <div class="card">
-                    <div class="card-header" id="headingAlert">
-                      <h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseAlert" aria-expanded="true" aria-controls="collapseAlert">
-                          Developer Note: Mainly for use on server feedback on post back
-                      </button></h2>
-                    </div>
-                    <div id="collapseAlert" class="collapse" aria-labelledby="headingAlert" data-parent="#accordionAlert">
-                      <div class="card-body text-muted">
-                          Alerts should mainly be used for server feedback when needed if something went wrong or needs some more work. For client side validation use Boostrap form features instead as shown example of below if you click "Register Bruker".
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <p class="text-right"><button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#alertExample" aria-expanded="false" aria-controls="alertExample">Developer guidelines</button></p>
+                <div class="collapse" id="alertExample"><div class="card card-body">
+                    <h5>NOTE: Mainly for use on server feedback on post back</h5>
+                    <p>
+                        Alerts should mainly be used for server feedback when needed if something went wrong or needs some more work.
+                        For client side validation use Boostrap form features instead as shown in example below (if you click "Register Bruker").
+                    </p>
+                </div></div>
+
             </div>
         </div>
 
@@ -189,34 +169,6 @@
                 <button type="button" class="btn btn-outline-secondary">Secondary</button>
                 <button type="button" class="btn btn-outline-secondary" disabled>Secondary</button>
 
-                <br><br>
-                <p class="lead">Responsive button "actionbar" <span class="text-muted">with dropdown for advanced options</span>:</p>
-
-                <div class="row no-gutters justify-content-between">
-                    <div class="col-md-10">
-                        <button class="btn btn-primary" type="button">Lag oppgave</button>
-                        <button class="btn btn btn-primary" type="button">Klargjør</button>
-                        <button class="btn btn btn-primary" type="button">Bilen er solgt</button>
-                    </div>
-
-                    <!-- see: https://getbootstrap.com/docs/4.5/components/dropdowns/ -->
-                    <div class="col-md-2 dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Avansert
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                            <h6 class="dropdown-header">Transport</h6>
-                            <button class="dropdown-item" type="button">Bestill transport</button>
-                            <button class="dropdown-item" type="button">Merk som levert</button>
-                            <div class="dropdown-divider"></div>
-                            <h6 class="dropdown-header">Administrasjon</h6>
-                            <button class="dropdown-item" type="button">Sjekk ut kjøretøy</button>
-                            <button class="dropdown-item" type="button">Endre Status</button>
-                            <button class="dropdown-item" type="button">Slå sammen ordre</button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
 
@@ -233,21 +185,16 @@
                     <li><code>done</code> - An process that is done</li>
                 </ul>
 
-                <div class="accordion" id="accordionTheme">
-                  <div class="card">
-                    <div class="card-header" id="headingTheme">
-                      <h2 class="mb-0"><button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTheme" aria-expanded="true" aria-controls="collapseTheme">
-                          Developer Note: Use standard Boostrap HTML for badges and buttons
-                      </button></h2>
-                    </div>
-                    <div id="collapseTheme" class="collapse" aria-labelledby="headingTheme" data-parent="#accordionTheme">
-                      <div class="card-body text-muted">
-                          The color themes are using a <a href="https://getbootstrap.com/docs/4.5/getting-started/theming/#add-to-map" target="_blank">official way to extend</a> boostrap so you can use any kind of Boostrap html just with the themes classes changed for the once above <em>(See below for examples)</em>.
-                          Should be used for badges and buttons as shown with examples below, please don't use for alerts as alerts should convey rather severity like danger/warning/info/sucess after some action.
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <p class="text-right"><button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#themeExample" aria-expanded="false" aria-controls="themeExample">Developer guidelines</button></p>
+                <div class="collapse" id="themeExample"><div class="card card-body">
+                    <h5>NOTE: Use standard Boostrap HTML for badges and buttons</h5>
+                    <p>
+                        These color themes are using a <a href="https://getbootstrap.com/docs/4.5/getting-started/theming/#add-to-map" target="_blank">official way to extend</a> bootstrap so you can use any kind of Boostrap html just with the themes classes changed for the once above <em>(See below for examples)</em>.
+                        Should be used for badges and buttons as shown with examples below, please don't use for alerts as alerts should convey rather severity like danger/warning/info/sucess after some action.
+                        <br><br>
+                        For more examples of when to use outline or not see below, for when to use process theme styles: Only for buttons to start/stop product processes.
+                    </p>
+                </div></div>
 
             </div>
         </div>
@@ -286,9 +233,38 @@
                     Stop Process
                 </button>
 
-                <button type="button" class="btn btn-done btn-lg btn-block">
+                <button type="button" class="btn btn-done btn-lg btn-block" disabled>
                     Process Done
                 </button>
+
+
+                <br><br>
+                <p class="lead">Responsive button "actionbar" <span class="text-muted">with dropdown for advanced options</span>:</p>
+
+                <div class="row no-gutters justify-content-between">
+                    <div class="col-md-10">
+                        <button class="btn btn-outline-primary" type="button">Lag oppgave</button>
+                        <button class="btn btn btn-primary" type="button">Klargjør</button>
+                        <button class="btn btn btn-primary" type="button">Bilen er solgt</button>
+                    </div>
+
+                    <!-- see: https://getbootstrap.com/docs/4.5/components/dropdowns/ -->
+                    <div class="col-md-2 dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Avansert
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                            <h6 class="dropdown-header">Transport</h6>
+                            <button class="dropdown-item" type="button">Bestill transport</button>
+                            <button class="dropdown-item" type="button">Merk som levert</button>
+                            <div class="dropdown-divider"></div>
+                            <h6 class="dropdown-header">Administrasjon</h6>
+                            <button class="dropdown-item" type="button">Sjekk ut kjøretøy</button>
+                            <button class="dropdown-item" type="button">Endre Status</button>
+                            <button class="dropdown-item" type="button">Slå sammen ordre</button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -299,14 +275,14 @@
             <div class="col-sm">
                 <p class="lead">Status badges <span class="text-muted">for client/track&trace-users who can't interact with them</span>:</p>
 
-                <span class="badge badge-start">
-                    Process <span class="text-muted">not started</span>
+                <span class="badge badge-outline-start">
+                    Lading <span class="text-muted">venter</span>
                 </span>
-                <span class="badge badge-stop">
-                    Process <span class="text-muted">in progress</span>
+                <span class="badge badge-outline-stop">
+                    Lading <span class="text-muted">pågår</span>
                 </span>
-                <span class="badge badge-done">
-                    Process <span class="text-muted">done</span>
+                <span class="badge badge-outline-done">
+                    Lading <span class="text-muted">ferdig</span>
                 </span>
             </div>
         </div>
@@ -418,6 +394,8 @@
                     <a href="#" title="Avbryt og kansellere oppretting av bruker" class="mr-4">Avbryt</a>
                     <button class="btn btn-outline-primary" type="submit" title="Register bruker så sant skjema er riktig fyllt inn">Register bruker</button>
                 </form>
+
+
             </div>
         </div>
 
@@ -425,66 +403,127 @@
 
         <div class="row">
             <div class="col-sm">
-                <p class="lead">Tables <span class="text-muted">for order views</span>:</p>
-                <p>Transport:</p>
+
+                <p class="lead">Form buttons <span class="text-muted">order creation form view, for customer</span>:</p>
+
+                <div class="row justify-content-between">
+                    <div class="col-md-auto">
+                        <a href="#" title="Avbryt og kansellere oppretting av ny ordre" class="mr-4">Avbryt</a>
+                        <button class="btn btn-outline-secondary" type="submit">Lagre kladd</button>
+                        <button class="btn btn-outline-primary" type="submit">Opprett ordre</button>
+                    </div>
+                    <div class="col-md-auto text-md-right">
+                        <!-- button class="btn btn-primary" type="submit">Large ordre</button -->
+                    </div>
+                </div>
+
+                <br><br>
+                <p class="lead">Form buttons <span class="text-muted">order creation form view, for terminal-admin/admin</span>:</p>
+
+                <div class="row justify-content-between">
+                    <div class="col-md-auto">
+                        <a href="#" title="Avbryt og kansellere oppretting av ny ordre" class="mr-4">Avbryt</a>
+                        <button class="btn btn-outline-primary" type="submit">Opprett ordre</button>
+                    </div>
+                    <div class="col-md-auto text-md-right">
+                        <button class="btn btn-primary" type="submit">Klar til transport</button>
+                        <button class="btn btn-primary" type="submit">Levert til terminal</button>
+                    </div>
+                </div>
+
+                <br><br>
+                <p class="lead">Form buttons <span class="text-muted">order details view</span>:</p>
+
+                <div class="row justify-content-between">
+                    <div class="col-md-auto">
+                        <button class="btn btn-outline-primary" type="submit">Lagre endringer</button>
+                        <button class="btn btn-outline-danger" type="submit">Slett</button>
+                    </div>
+                    <div class="col-md-auto text-md-right">
+                        <!-- button class="btn btn-primary" type="submit">Klar til transport</button>
+                        <button class="btn btn-primary" type="submit">Levert til terminal</button -->
+                    </div>
+                </div>
+
+
+                <p class="text-right"><button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#formButtonsExample" aria-expanded="false" aria-controls="formButtonsExample">Developer guidelines</button></p>
+                <div class="collapse" id="formButtonsExample"><div class="card card-body">
+                      Like on action bar above, point here is is use outline for normal operations, filled buttons for process operations, and processes themed buttons primarily for product start/stop.
+                      <em>TODO: On small screen the "Cancel" link on order creation example does not center and pad enough away from buttons below, please consider laying out this differently for now.</em>
+                </div></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+                <p class="lead">Tables <span class="text-muted"> usage examples</span>:</p>
+
+                <p>Ordre view:</p>
                 <table class="table table-order table-borderless table-hover">
                   <thead>
                     <tr>
-                        <th scope="col" class="d-none d-lg-table-cell">#</th><th scope="col">reg/VIN</th><th scope="col">Hentested</th><th scope="col">Leveringssted</th><th scope="col">Type</th><th scope="col">Status</th>
+                        <th scope="col" class="d-none d-lg-table-cell">#</th><th scope="col">Reg/VIN</th><th scope="col" class="d-none d-lg-table-cell">Bestiltdato</th><th scope="col">Oppdragsgiver</th><th scope="col">Terminal</th><th scope="col">Type</th><th scope="col">Status</th><th scope="col" class="d-none d-md-table-cell">Kommentar</th><th scope="col" class="d-none d-sm-table-cell">Solgt</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                        <th scope="row" class="d-none d-lg-table-cell">1</th><td><span class="text-start" style="font-size-adjust:0.66;">●</span> &nbsp;DJ99999</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X1</td><td class="text-start">Klar til transport</td>
+                        <th scope="row" class="d-none d-lg-table-cell"><a href="#" class="text-muted">1</a></th><td><a href="#">DJ99999</a></td><td class="d-none d-lg-table-cell">21.11.2020</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X1</td><td class="text-start"><span style="font-size-adjust:0.66;">●</span> &nbsp;Ny</td><td class="d-none d-md-table-cell"></td><td class="d-none d-sm-table-cell"></td>
                     </tr>
                     <tr>
-                        <th scope="row" class="d-none d-lg-table-cell">2</th><td><span class="text-start" style="font-size-adjust:0.66;">●</span> &nbsp;DJ88888</td><td>BMW Norge</td><td>AutoIn Billingstad</td><td>X5</td><td class="text-start">Klar til transport</td>
+                        <th scope="row" class="d-none d-lg-table-cell"><a href="#" class="text-muted">2</a></th><td><a href="#">DJ88888</a></td><td class="d-none d-lg-table-cell">11.11.2020</td><td>BMW Norge</td><td>AutoIn Billingstad</td><td>X5</td><td class="text-stop"><span style="font-size-adjust:0.66;">●</span> &nbsp;Klar til produksjon</td><td class="d-none d-md-table-cell"><a href="#">Vis (1)</a></td><td class="d-none d-sm-table-cell">✓</td>
                     </tr>
                     <tr>
-                        <th scope="row" class="d-none d-lg-table-cell">3</th><td><span class="text-stop" style="font-size-adjust:0.66;">●</span> &nbsp;DJ77777</td><td>BMW Norge</td><td>AutoIn Røyken</td><td>X3</td><td class="text-stop">Under transport</td>
+                        <th scope="row" class="d-none d-lg-table-cell"><a href="#" class="text-muted">3</a></th><td><a href="#">DJ77777</a></td><td class="d-none d-lg-table-cell">01.11.2020</td><td>BMW Norge</td><td>AutoIn Røyken</td><td>X3</td><td class="text-done"><span style="font-size-adjust:0.66;">●</span> &nbsp;Levert Kjøper</td><td class="d-none d-md-table-cell"><a href="#">Vis (2)</a></td><td class="d-none d-sm-table-cell">✓</td>
                     </tr>
                   </tbody>
                 </table>
 
-                <p>Ordre:</p>
+                <p>Terminal order view:</p>
                 <table class="table table-order table-borderless table-hover">
                   <thead>
                     <tr>
-                        <th scope="col" class="d-none d-lg-table-cell">#</th><th scope="col">reg/VIN</th><th scope="col">Oppdragsgiver</th><th scope="col">Terminal</th><th scope="col">Type</th><th scope="col">Status</th>
+                        <th scope="col" class="d-none d-lg-table-cell">#</th><th scope="col">Reg/VIN</th><th scope="col">Oppdragsgiver</th><th scope="col">Terminal</th><th scope="col">Type</th><th scope="col">Status</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                        <th scope="row" class="d-none d-lg-table-cell">1</th><td>DJ99999</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X1</td><td>Ny</td>
+                        <th scope="row" class="d-none d-lg-table-cell"><a href="#" class="text-muted">1</a></th><td><a href="#">DJ99999</a></td><td>BMW Norge</td><td>AutoIn nr19</td><td>X1</td><td class="text-start"><span style="font-size-adjust:0.66;">●</span> &nbsp;Levert Terminal</td>
                     </tr>
                     <tr>
-                        <th scope="row" class="d-none d-lg-table-cell">2</th><td>DJ88888</td><td>BMW Norge</td><td>AutoIn Billingstad</td><td>X5</td><td>Klar til produksjon</td>
+                        <th scope="row" class="d-none d-lg-table-cell"><a href="#" class="text-muted">2</a></th><td><a href="#">DJ88888</a></td><td>BMW Norge</td><td>AutoIn nr19</td><td>X5</td><td class="text-stop"><span style="font-size-adjust:0.66;">●</span> &nbsp;Klar til produksjonlinje / Vask</td>
                     </tr>
                     <tr>
-                        <th scope="row" class="d-none d-lg-table-cell">3</th><td>DJ77777</td><td>BMW Norge</td><td>AutoIn Røyken</td><td>X3</td><td>Under transport</td>
+                        <th scope="row" class="d-none d-lg-table-cell"><a href="#" class="text-muted">3</a></th><td><a href="#">DJ77777</a></td><td>BMW Norge</td><td>AutoIn nr19</td><td>X3</td><td class="text-done"><span style="font-size-adjust:0.66;">●</span> &nbsp;Klar til Salg</td>
                     </tr>
                   </tbody>
                 </table>
 
-                <p>Terminal:</p>
+
+                <p>Transport order view:</p>
                 <table class="table table-order table-borderless table-hover">
                   <thead>
                     <tr>
-                        <th scope="col" class="d-none d-lg-table-cell">#</th><th scope="col">reg/VIN</th><th scope="col">Oppdragsgiver</th><th scope="col">Terminal</th><th scope="col">Type</th><th scope="col">Status</th>
+                        <th scope="col" class="d-none d-lg-table-cell">#</th><th scope="col">Reg/VIN</th><th scope="col">Hentested</th><th scope="col">Hentedato</th><th scope="col">Leveringssted</th><th scope="col">Type</th><th scope="col">Status</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                        <th scope="row" class="d-none d-lg-table-cell">1</th><td>DJ99999</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X1</td><td class="text-start">Levert Terminal</td>
+                        <th scope="row" class="d-none d-lg-table-cell"><a href="#" class="text-muted">2</a></th><td><a href="#">DJ88888</a></td><td>BMW Norge</td><td>22.12.2020</td><td>AutoIn Billingstad</td><td>X5</td><td class="text-start"><span style="font-size-adjust:0.66;">●</span> &nbsp;Klar til transport</td>
                     </tr>
                     <tr>
-                        <th scope="row" class="d-none d-lg-table-cell">2</th><td>DJ88888</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X5</td><td class="text-stop">Klar til produksjonlinje / Vask</td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="d-none d-lg-table-cell">3</th><td>DJ77777</td><td>BMW Norge</td><td>AutoIn nr19</td><td>X3</td><td class="text-done">Ferdig produsert</td>
+                        <th scope="row" class="d-none d-lg-table-cell"><a href="#" class="text-muted">3</a></th><td><a href="#">DJ77777</a></td><td>BMW Norge</td><td>26.11.2020</td><td>AutoIn Røyken</td><td>X3</td><td class="text-stop"><span style="font-size-adjust:0.66;">●</span> &nbsp;Under transport</td>
                     </tr>
                   </tbody>
                 </table>
+
+                <p class="text-right"><button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#tableExample" aria-expanded="false" aria-controls="tableExample">Developer guidelines</button></p>
+                <div class="collapse" id="tableExample"><div class="card card-body">
+                      For links, use "primary" / no link class (default blue links) for significant entries to make them stand out.<br><br>
+                      Example on Customer -> Company: Have primary links on cusomter name and on "Products" to make it clear that is a link going somewhere else.<br><br>
+                      Example on Order: As seen above, Reg/Vin is primary, same is comment, Order (#) number is muted, and on other entries you can use text-black on link if pointing to order details.
+                </div></div>
 
             </div>
         </div>
