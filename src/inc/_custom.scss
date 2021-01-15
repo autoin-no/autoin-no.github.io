@@ -79,10 +79,15 @@ body label {
     color: $gray-700;
 }
 
-body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new):not(.btn-sm) {
     min-width: 11rem;
     margin-bottom: 0.2em;
     margin-top: 0.2em;
+}
+
+body .btn-sm:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+    min-width: 5em;
+    margin: 0;
 }
 
 // Increase font and border width on outline buttons
@@ -139,7 +144,7 @@ body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-t
  */
 @media (max-width: 992px) {
     // -lg, breakpoint 992px, responsive container size 960px
-    body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+    body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new):not(.btn-sm) {
         min-width: 9rem;
     }
 
@@ -150,8 +155,8 @@ body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-t
 
 @media (max-width: 768px) {
     // -md, breakpoint 768px, responsive container size 720px
-    div[class*="col-md-"] .btn[class*="btn-outline-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new),
-    div[class*="col-md-"] .btn[class*="btn-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+    div[class*="col-md-"] .btn[class*="btn-outline-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new):not(.btn-sm),
+    div[class*="col-md-"] .btn[class*="btn-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new):not(.btn-sm) {
         width: 95%;
     }
 
@@ -162,8 +167,8 @@ body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-t
 
 @media (max-width: 576px) {
     // -sm, breakpoint 576px, responsive container size 540px
-    .btn[class*="btn-outline-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new),
-    .btn[class*="btn-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+    .btn[class*="btn-outline-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new):not(.btn-sm),
+    .btn[class*="btn-"]:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new):not(.btn-sm) {
         width: 100%;
     }
 
