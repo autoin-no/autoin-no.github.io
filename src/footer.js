@@ -1,6 +1,6 @@
 import 'bootstrap';
 
-// Custom JS
+// Process button s SVG injection (done like this in order to make sure color can be set from CSS, not possible with :after/:befor it seems)
 $(function () {
     // Local helpers
     function _createFromHTML(htmlString) {
@@ -21,14 +21,38 @@ $(function () {
     document.querySelectorAll(".btn-done, .btn-outline-done, .badge-done, .badge-outline-done").forEach(el => el.prepend(_createFromHTML(doneSvg), " "));
 });
 
+// Bulk copy textarea features
+document.body.addEventListener("paste", function(event) {
+    // Exit early if target is not bc-area
+    if (!event.target.classList.contains("bc-area")) {
+        return;
+    }
+
+    // OK, lets get the text user wants to paste
+    let paste = (event.clipboardData || window.clipboardData).getData('text').normalize().trim();
+
+    // Detect comma seperated string and adapt it to newline seperated format
+    if (paste.indexOf("\n") === -1 && paste.indexOf(",") !== -1) {
+        paste = paste.split(",").map(s => s.trim()).join("\n");
+    }
+
+    // Replace tabs for spaces
+    paste = paste.replace(/\t/g, " ");
+
+    // Set value
+    event.target.innerHTML = paste;
+    event.preventDefault();
+});
+
+
 // Searchable selects lite, adapted from https://codepen.io/saravanajd/pen/GGPQbY
 // TODO: Rewrite to pure JS for Boostrap v5
 
 //document.addEventListener('DOMContentLoaded',
 $(function () {
     $('select.dd-select-search').each(function (i, select) {
-        if (!$(this).next().hasClass('dropdown-select')) {
-            $(this).after('<div class="dropdown-select ' + ($(this).attr('class') || '') + '" tabindex="0"><span class="current"></span><div class="list"><ul class="list-group list-group-flush"></ul></div></div>');
+        if (!$(this).next().hasClass('dd-select')) {
+            $(this).after('<div class="dd-select ' + ($(this).attr('class') || '') + '" tabindex="0"><span class="current"></span><div class="list"><ul class="list-group list-group-flush"></ul></div></div>');
             var dropdown = $(this).next();
             var options = $(select).find('option');
             var selected = $(this).find('option:selected');
@@ -41,17 +65,17 @@ $(function () {
         }
     });
 
-    $('.dropdown-select ul').before('<div class="dd-search"><input autocomplete="off" class="form-control" type="search"></div>');
+    $('.dd-select ul').before('<div class="dd-search"><input autocomplete="off" class="form-control" type="search"></div>');
 });
 
 // Event listeners
 
 // Open/close
-$(document).on('click', '.dropdown-select', function (event) {
+$(document).on('click', '.dd-select', function (event) {
     if(event.target.type === 'search') {
         return;
     }
-    $('.dropdown-select').not($(this)).removeClass('open');
+    $('.dd-select').not($(this)).removeClass('open');
     if (this.classList.toggle('open')) {// Is now open
         $(this).find('li').attr('tabindex', 0);
         $('.dd-search input').trigger('focus');
@@ -61,15 +85,15 @@ $(document).on('click', '.dropdown-select', function (event) {
 
         // Reset search input on close
         $('.dd-search input').val('');
-        $('.dropdown-select ul > li').show();
+        $('.dd-select ul > li').show();
     }
 });
 
 // Close when clicking outside
 $(document).on('click', function (event) {
-    if ($(event.target).closest('.dropdown-select').length === 0) {
-        $('.dropdown-select').removeClass('open');
-        $('.dropdown-select li').removeAttr('tabindex');
+    if ($(event.target).closest('.dd-select').length === 0) {
+        $('.dd-select').removeClass('open');
+        $('.dd-select li').removeAttr('tabindex');
         event.stopPropagation();
     }
 });
@@ -77,22 +101,22 @@ $(document).on('click', function (event) {
 // Search (onkeyup)
 $(document).on('keyup', '.dd-search input', function () {
     var valThis = this.value;
-    $(this).closest('.dropdown-select').find('ul > li').each(function() {
+    $(this).closest('.dd-select').find('ul > li').each(function() {
         var text = $(this).text()
         text.toLowerCase().indexOf(valThis.toLowerCase()) > -1 ? $(this).show() : $(this).hide();
    });
 });
 
 // Option click
-$(document).on('click', '.dropdown-select li', function (event) {
+$(document).on('click', '.dd-select li', function (event) {
     $(this).closest('ul').find('li.active').removeClass('active');
     this.classList.add('active');
-    $(this).closest('.dropdown-select').find('.current').text($(this).text());
-    $(this).closest('.dropdown-select').prev('select').val($(this).data('value')).trigger('change');
+    $(this).closest('.dd-select').find('.current').text($(this).text());
+    $(this).closest('.dd-select').prev('select').val($(this).data('value')).trigger('change');
 });
 
 // Keyboard events
-$(document).on('keydown', '.dropdown-select', function (event) {
+$(document).on('keydown', '.dd-select', function (event) {
     var focusIfEnabled = function(n) { if (n && !n.hasClass('disabled')) n.trigger('focus');};
     if (event.code === 'Enter') {
         if (this.classList.contains('open')) {

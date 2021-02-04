@@ -144,6 +144,13 @@ body .btn-sm:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.bt
 }
 
 /**
+ * Bulk copy/paste area for multiple cars from excel/email/*.
+ */
+textarea.bc-area:placeholder-shown {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+/**
  * Searchable selects lite, taken from: https://codepen.io/saravanajd/pen/GGPQbY
  */
 
@@ -151,23 +158,23 @@ select.dd-select-search {
     display: none !important;
 }
 
-.dropdown-select.open .list {
+.dd-select.open .list {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
     pointer-events: auto;
 }
 
-.dropdown-select li.disabled {
+.dd-select li.disabled {
     cursor: default;
     pointer-events: none;
 }
 
-.dropdown-select li.list-group-item {
+.dd-select li.list-group-item {
     padding: 0.2em $list-group-item-padding-x;
 }
 
-.dropdown-select .list {
+.dd-select .list {
     transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
     -webkit-transform: scale(0.75);
     transform: scale(0.75);
@@ -202,7 +209,7 @@ select.dd-select-search {
     }
 }
 
-.dropdown-select .dd-search {
+.dd-select .dd-search {
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -210,7 +217,7 @@ select.dd-select-search {
     margin: 0.5rem;
 }
 
-.dropdown-select .dd-search input.form-control {
+.dd-select .dd-search input.form-control {
     width: 90%;
 }
 
