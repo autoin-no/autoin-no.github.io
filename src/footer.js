@@ -39,11 +39,48 @@ document.body.addEventListener("paste", function(event) {
     // Replace tabs for spaces
     paste = paste.replace(/\t/g, " ");
 
-    // Set value
-    event.target.innerHTML = paste;
+    // Detect bullet points (-, •, ..), which on paste seems to get a whitespace after it before value
+    if (paste.indexOf(' ') === 1) {
+        paste = paste.split("\n").map(s => s.substring(2)).join("\n");
+    }
+
     event.preventDefault();
+
+    let modal = $('#ExcelModal');
+    if (!modal) {
+        // Set value
+        event.target.innerHTML = paste;
+        return
+    };
+
+    // Place value on data attribute instead of value so it 1. is empty if opnend  again, and 2. as for some reason won't work to set innerHTML a second time
+    modal.data("paste", paste);
+    modal.modal("hide");
 });
 
+$('#ExcelModal').on('shown.bs.modal', function (event) {
+    $(this).data("paste", "").find(".bc-area").trigger("focus");
+});
+
+$('#ExcelModal').on('hidden.bs.modal', function (event) {
+    let modal = $(this);
+    if (modal.data("onpasted") && modal.data("paste")) {
+        let pastedFunction = modal.data("onpasted");
+        // context: this (modal)
+        // arguments:
+        // - array pastedArray (multidimensional array, each entry has reg.Nr first, then if present the model)
+        // - string pastedString
+        window[pastedFunction].call(
+            this,
+            modal.data("paste").split("\n").map(function (s) {
+                let i = s.indexOf(' ');
+                if (i === -1) return [s];
+                return [s.substring(0, i), s.substring(i + 1)]
+            }),
+            modal.data("paste")
+        );
+    }
+});
 
 // Searchable selects lite, adapted from https://codepen.io/saravanajd/pen/GGPQbY
 // TODO: Rewrite to pure JS for Boostrap v5

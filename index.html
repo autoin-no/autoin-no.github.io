@@ -447,17 +447,52 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <label for="area001">TextArea for copy paste of cars <code>.form-control .bc-area</code></label>
-                        <textarea id="area001" class="form-control bc-area" rows="9" cols="50" placeholder="Merk felt og lim inn rader fra Excel med reg.nr, evnt også kolonne med bilmodell. Fra epost/word støttes både nylinje og komma som seperator. Eksempel på hva du bør forvente som resultat (når modell navn også limes inn):
 
-PR99999 Ford Conect
-EC99999 Tesla 3
-KT99999 Opel Astra"></textarea>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#ExcelModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style="fill: var(--green);" class="bi bi-file-earmark-spreadsheet-fill" viewBox="0 0 18 18">
+                            <path d="M6 12v-2h3v2H6z"/>
+                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM3 9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2H3V9z"/>
+                          </svg>
+                          Legg til fra liste
+                    </button>
+
                     </div>
                 </div>
 
             </div>
         </div>
+
+<!-- Modal -->
+<div class="modal fade" id="ExcelModal" tabindex="-1" aria-labelledby="ExcelModalLabel" aria-hidden="true" data-onpasted="getExcelPasted">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="ExcelModalLabel"><label for="area001">Legg til flere biler fra samme hentested</label></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <textarea id="area001" class="form-control bc-area" rows="9" cols="45" placeholder="Excel: Lim inn rader med reg.nr, evnt også kolonne med bilmodell.
+
+Tekst: Fra epost/word støttes lister med både 'nylinje' og komma som seperator, evnt også bilmodell navn adskilt med mellomrom.
+
+Eksempel: DR44556 Toyota Auris, EC55667 Tesla 3"></textarea>
+    </div>
+    </div>
+</div>
+</div>
+
+<script>
+
+function getExcelPasted(pastedArr, pasteStr) {
+    console.table(pastedArr);
+    alert("Got pasted data, see console for array value. String form:\n" + pasteStr);
+}
+
+</script>
+
 
         <hr>
 
