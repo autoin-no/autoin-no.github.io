@@ -14,7 +14,11 @@ module.exports = {
     entry: {
         'v1/footer': './src/footer.js',
         'v1/styles': './src/theme_light.scss',
-        //'v1/styles_dark': './src/theme_dark.scss',
+        //' Notes for next version with Boostrap v5, make it more clear it contians full boostrap in build:
+        //'v5/bootstrap_ai': './src/bootstrap_ai.js',
+        //'v5/bootstrap_ai': './src/bootstrap_ai.scss',// entry point handling redirect to theme based on system preferences
+        //'v5/bootstrap_ai_light': './src/bootstrap_ai_light.scss'
+        //'v5/bootstrap_ai_dark': './src/bootstrap_ai_dark.scss'
     },
     output: {
         filename: '[name].js',

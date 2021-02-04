@@ -48,7 +48,7 @@
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-right-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                   <path fill-rule="evenodd" d="M5.172 10.828a.5.5 0 0 0 .707 0l4.096-4.096V9.5a.5.5 0 1 0 1 0V5.525a.5.5 0 0 0-.5-.5H6.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                </svg></a>) and from the <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">official bootstrap documentation</a>.
+                </svg></a>) and from the <a href="https://getbootstrap.com/docs/4.6/getting-started/introduction/" target="_blank">official bootstrap documentation</a>.
             </p>
             <h5>NOTE 2: This is a living style guide, please report issues or propose fixes on Github</h5>
             <p>
@@ -189,7 +189,7 @@
                 <div class="collapse" id="themeExample"><div class="card card-body">
                     <h5>NOTE: Use standard Boostrap HTML for badges and buttons</h5>
                     <p>
-                        These color themes are using a <a href="https://getbootstrap.com/docs/4.5/getting-started/theming/#add-to-map" target="_blank">official way to extend</a> bootstrap so you can use any kind of Boostrap html just with the themes classes changed for the once above <em>(See below for examples)</em>.
+                        These color themes are using a <a href="https://getbootstrap.com/docs/4.6/getting-started/theming/#add-to-map" target="_blank">official way to extend</a> bootstrap so you can use any kind of Boostrap html just with the themes classes changed for the once above <em>(See below for examples)</em>.
                         Should be used for badges and buttons as shown with examples below, please don't use for alerts as alerts should convey rather severity like danger/warning/info/sucess after some action.
                         <br><br>
                         For more examples of when to use outline or not see below, for when to use process theme styles: Only for buttons to start/stop product processes.
@@ -253,7 +253,7 @@
                         <button class="btn btn btn-primary" type="button">Bilen er solgt</button>
                     </div>
 
-                    <!-- see: https://getbootstrap.com/docs/4.5/components/dropdowns/ -->
+                    <!-- see: https://getbootstrap.com/docs/4.6/components/dropdowns/ -->
                     <div class="col-md-2 dropdown">
                         <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Avansert
@@ -261,7 +261,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
                             <h6 class="dropdown-header">Transport</h6>
                             <button class="dropdown-item" type="button">Bestill transport</button>
-                            <button class="dropdown-item" type="button">Merk som levert</button>
+                            <button class="dropdown-item disabled" type="button">Merk som levert</button>
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header">Administrasjon</h6>
                             <button class="dropdown-item" type="button">Sjekk ut kjøretøy</button>
@@ -401,6 +401,37 @@
                     <button class="btn btn-outline-primary" type="submit" title="Register bruker så sant skjema er riktig fyllt inn">Register bruker</button>
                     <a href="#" title="Avbryt og kansellere oppretting av bruker" class="my-2 mx-3 d-block d-md-inline text-center text-md-left">Avbryt</a>
                 </form>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div id="order-selects" class="col-sm">
+
+                <p class="lead">Selects <span class="text-muted">in different forms</span>:</p>
+
+                <div class="row justify-content-between">
+                    <div class="col-md-4">
+                        <label for="select003">Normal <code>.custom-select</code></label>
+                        <select id="select003" class="custom-select" required>
+                          <option selected disabled value="">Velg en:</option>
+                          <option>Tore</option>
+                          <option>Harald</option>
+                          <option>Anders</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="select004">Search <code>.custom-select .dd-select-search</code></label>
+                        <select id="select004" class="custom-select dd-select-search" required>
+                          <option selected disabled value="">Velg en:</option>
+                          <option>Tore</option>
+                          <option>Harald</option>
+                          <option>Anders</option>
+                        </select>
+                    </div>
+                </div>
 
 
             </div>

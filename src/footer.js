@@ -1,7 +1,7 @@
 import 'bootstrap';
 
 // Custom JS
-(function () {
+$(function () {
     // Local helpers
     function _createFromHTML(htmlString) {
         var div = document.createElement('div');
@@ -19,4 +19,113 @@ import 'bootstrap';
 
     var doneSvg = "<svg width='1rem' height='1rem' viewBox='0 0 16 16' class='bi bi-check2-circle' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z'/><path fill-rule='evenodd' d='M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z'/></svg>";
     document.querySelectorAll(".btn-done, .btn-outline-done, .badge-done, .badge-outline-done").forEach(el => el.prepend(_createFromHTML(doneSvg), " "));
-})();
+});
+
+// Searchable selects lite, adapted from https://codepen.io/saravanajd/pen/GGPQbY
+// TODO: Rewrite to pure JS for Boostrap v5
+
+//document.addEventListener('DOMContentLoaded',
+$(function () {
+    $('select.dd-select-search').each(function (i, select) {
+        if (!$(this).next().hasClass('dropdown-select')) {
+            $(this).after('<div class="dropdown-select ' + ($(this).attr('class') || '') + '" tabindex="0"><span class="current"></span><div class="list"><ul class="list-group list-group-flush"></ul></div></div>');
+            var dropdown = $(this).next();
+            var options = $(select).find('option');
+            var selected = $(this).find('option:selected');
+            dropdown.find('.current').html(selected.text());
+            options.each(function (j, o) {
+                // TODO aria-current="true"
+                var classes = 'list-group-item' + (o.disabled ? ' disabled' : '') + (o.selected ? ' active' : '');
+                dropdown.find('ul').append('<li class="' + classes + '" data-value="' + o.value + '">' + o.label || o.text + '</li>');
+            });
+        }
+    });
+
+    $('.dropdown-select ul').before('<div class="dd-search"><input autocomplete="off" class="form-control" type="search"></div>');
+});
+
+// Event listeners
+
+// Open/close
+$(document).on('click', '.dropdown-select', function (event) {
+    if(event.target.type === 'search') {
+        return;
+    }
+    $('.dropdown-select').not($(this)).removeClass('open');
+    if (this.classList.toggle('open')) {// Is now open
+        $(this).find('li').attr('tabindex', 0);
+        $('.dd-search input').trigger('focus');
+    } else {
+        $(this).find('li').removeAttr('tabindex');
+        $(this).trigger('focus');
+
+        // Reset search input on close
+        $('.dd-search input').val('');
+        $('.dropdown-select ul > li').show();
+    }
+});
+
+// Close when clicking outside
+$(document).on('click', function (event) {
+    if ($(event.target).closest('.dropdown-select').length === 0) {
+        $('.dropdown-select').removeClass('open');
+        $('.dropdown-select li').removeAttr('tabindex');
+        event.stopPropagation();
+    }
+});
+
+// Search (onkeyup)
+$(document).on('keyup', '.dd-search input', function () {
+    var valThis = this.value;
+    $(this).closest('.dropdown-select').find('ul > li').each(function() {
+        var text = $(this).text()
+        text.toLowerCase().indexOf(valThis.toLowerCase()) > -1 ? $(this).show() : $(this).hide();
+   });
+});
+
+// Option click
+$(document).on('click', '.dropdown-select li', function (event) {
+    $(this).closest('ul').find('li.active').removeClass('active');
+    this.classList.add('active');
+    $(this).closest('.dropdown-select').find('.current').text($(this).text());
+    $(this).closest('.dropdown-select').prev('select').val($(this).data('value')).trigger('change');
+});
+
+// Keyboard events
+$(document).on('keydown', '.dropdown-select', function (event) {
+    var focusIfEnabled = function(n) { if (n && !n.hasClass('disabled')) n.trigger('focus');};
+    if (event.code === 'Enter') {
+        if (this.classList.contains('open')) {
+            var focused_option = $($(this).find('li:focus')[0] || $(this).find('li.active')[0]);
+            focused_option.trigger('click');
+        } else {
+            $(this).trigger('click');
+        }
+        return false;
+    } else if (event.code === 'ArrowDown') {
+        if (!this.classList.contains('open')) {
+            $(this).trigger('click');
+        } else if ($(event.target).is("input:focus")) {
+            $($(this).find('li:visible:not(.disabled)').first()).trigger('focus');
+        } else {
+            var focused_option = $($(this).find('li:focus')[0] || $(this).find('li.active:visible')[0]);
+            focusIfEnabled(focused_option.next());
+        }
+        return false;
+    } else if (event.code === 'ArrowUp') {
+        if (!this.classList.contains('open')) {
+            $(this).trigger('click');
+        } else if ($(event.target).is("input:focus")) {
+            $($(this).find('li:visible:not(.disabled)').last()).trigger('focus');
+        } else {
+            var focused_option = $($(this).find('li:focus')[0] || $(this).find('li.active:visible')[0]);
+            focusIfEnabled(focused_option.prev());
+        }
+        return false;
+    } else if (event.code === 'Escape') {
+        if (this.classList.contains('open')) {
+            $(this).trigger('click');
+        }
+        return false;
+    }
+});

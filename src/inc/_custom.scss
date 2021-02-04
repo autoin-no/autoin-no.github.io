@@ -144,6 +144,77 @@ body .btn-sm:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.bt
 }
 
 /**
+ * Searchable selects lite, taken from: https://codepen.io/saravanajd/pen/GGPQbY
+ */
+
+select.dd-select-search {
+    display: none !important;
+}
+
+.dropdown-select.open .list {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdown-select li.disabled {
+    cursor: default;
+    pointer-events: none;
+}
+
+.dropdown-select li.list-group-item {
+    padding: 0.2em $list-group-item-padding-x;
+}
+
+.dropdown-select .list {
+    transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    margin-top: 4px;
+    padding: $input-padding-y 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: $input-padding-y !important;
+    right: $input-padding-y !important;
+    z-index: 999;
+    max-height: 280px;
+    overflow: auto;
+
+    // Taken from _forms,scss .form-control styling
+    color: $input-color;
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+    @include border-radius($input-border-radius, 0);
+    @include box-shadow($input-box-shadow);
+    @include transition($input-transition);
+
+    &:disabled,
+    &[readonly] {
+      background-color: $input-disabled-bg;
+      // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+      opacity: 1;
+    }
+}
+
+.dropdown-select .dd-search {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+.dropdown-select .dd-search input.form-control {
+    width: 90%;
+}
+
+/**
  * Responsive adjustments to buttons and button groups.
  */
 @media (max-width: 992px) {
