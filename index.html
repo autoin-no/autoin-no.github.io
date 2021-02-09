@@ -413,7 +413,7 @@
 
                 <div class="row justify-content-between">
                     <div class="col-md-4">
-                        <label for="select003">Normal <code>.custom-select</code></label>
+                        <label for="select003">Normal select <code>.custom-select</code></label>
                         <select id="select003" class="custom-select" required>
                           <option selected disabled value="">Velg en:</option>
                           <option>Tore</option>
@@ -423,7 +423,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label for="select004">Search <code>.custom-select .dd-select-search</code></label>
+                        <label for="select004">Search select<code>.custom-select .dd-select-search</code></label>
                         <select id="select004" class="custom-select dd-select-search" required>
                           <option selected disabled value="">Velg en:</option>
                           <option>Tore</option>
@@ -434,6 +434,13 @@
                 </div>
 
                 <!-- TODO: Add example for Datalist when  moving to Bootstrap v5 -->
+
+                <p class="text-right mt-4"><button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#selectExample" aria-expanded="false" aria-controls="selectExample">Developer guidelines</button></p>
+                <div class="collapse" id="selectExample"><div class="card card-body">
+                    <p>Selects are to be used when there are predefined options user should pick between, prefer the search version if there can become many options.</p>
+
+                    <p>For sitations where user should be able to add options on the fly, we'll in the future use <a href="https://getbootstrap.com/docs/5.0/forms/form-control/#datalists">datalists</a>.</p>
+                </div></div>
 
             </div>
         </div>
@@ -459,6 +466,18 @@
 
                     </div>
                 </div>
+
+                <p class="text-right"><button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#bulkInsertExample" aria-expanded="false" aria-controls="bulkInsertExample">Developer guidelines</button></p>
+                <div class="collapse" id="bulkInsertExample"><div class="card card-body">
+                    <p>This component consists of two parts, the underlying textarea with <code>.bc-area</code> with javascript logic handling parsing the copy paste content from excel/word/email sources,
+                        and a modal with id <code>#ExcelModal</code> which has custom  callback on <code>data-onpasted</code> property where you'll get the pasted data both as a multi-dimensional array and as a string.
+                    </p>
+
+                    <p>The formats supported to be pasted into the text area is:<br>
+                    - Excel: 1 or 2 columns, first must be reg.nr second can optionally be car type (model)</br>
+                    - Word/Text: Either list of reg.nr (bullet points or just each reg.nr on a new line), or just a comma separated list. In all cases car type can optionally be there as well by means of separation either with newline or tab from the reg.nr
+                    </p>
+                </div></div>
 
             </div>
         </div>
