@@ -7,17 +7,11 @@ body nav {
 }
 
 /*
- * BADGE overloading and outline style
+ * BADGE process outline style
  */
-body .badge {
+.badge.badge-outline-start, .badge.badge-outline-stop, .badge.badge-outline-done {
     width: 100%;
     max-width: 22.5rem;
-}
-
-body .badge .text-muted, body .btn .text-muted {
-    opacity: 0.7;
-    color: inherit !important;
-    vertical-align: middle;
 }
 
 body .badge.badge-outline-start {
@@ -36,6 +30,12 @@ body .badge.badge-outline-done {
     background-color: $white;
     border: 1px solid $green;
     color: $green;
+}
+
+body .badge .text-muted, body .btn .text-muted {
+    opacity: 0.7;
+    color: inherit !important;
+    vertical-align: middle;
 }
 
 /*
