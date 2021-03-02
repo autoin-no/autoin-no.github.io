@@ -74,7 +74,7 @@ $('#ExcelModal').on('hidden.bs.modal', function (event) {
             this,
             modal.data("paste").split("\n").map(function (s) {
                 let i = s.indexOf(' ');
-                if (i === -1) return [s];
+                if (i === -1) return [s, ''];
                 return [s.substring(0, i), s.substring(i + 1)]
             }),
             modal.data("paste")
