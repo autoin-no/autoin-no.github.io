@@ -6,6 +6,11 @@ body nav {
     font-weight: 400;
 }
 
+// Don't let the custom XL and XXL breakpoints cause plain .container to grow beyond 1200px
+@media (min-width: 1400px) {
+    .container {max-width: 1200px;}
+}
+
 /*
  * BADGE process outline style
  */
