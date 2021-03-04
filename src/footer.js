@@ -170,7 +170,11 @@ $(function () {
 
     // Keyboard events
     $(document).on('keydown', '.dd-select', function (event) {
-        var focusIfEnabled = function(n) { if (n && !n.hasClass('disabled')) n.trigger('focus');};
+        var focusFirst = function(n) {
+            if (n && n.length) {
+                n.first().trigger('focus');
+            }
+        };
         if (event.code === 'Enter') {
             if (this.classList.contains('open')) {
                 var focused_option = $($(this).find('li:focus')[0] || $(this).find('li.active')[0]);
@@ -186,7 +190,7 @@ $(function () {
                 $($(this).find('li:visible:not(.disabled)').first()).trigger('focus');
             } else {
                 var focused_option = $($(this).find('li:focus')[0] || $(this).find('li.active:visible')[0]);
-                focusIfEnabled(focused_option.next());
+                focusFirst(focused_option.nextAll('li:visible:not(.disabled)'));
             }
             return false;
         } else if (event.code === 'ArrowUp') {
@@ -196,7 +200,7 @@ $(function () {
                 $($(this).find('li:visible:not(.disabled)').last()).trigger('focus');
             } else {
                 var focused_option = $($(this).find('li:focus')[0] || $(this).find('li.active:visible')[0]);
-                focusIfEnabled(focused_option.prev());
+                focusFirst(focused_option.prevAll('li:visible:not(.disabled)'));
             }
             return false;
         } else if (event.code === 'Escape') {
