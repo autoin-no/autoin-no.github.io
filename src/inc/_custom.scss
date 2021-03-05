@@ -44,6 +44,37 @@ body .badge .text-muted, body .btn .text-muted {
 }
 
 /*
+ * Fieldset expanded styling, for dynamically injected group of fields.
+ */
+
+.expanded-group-left, .expanded-group-right, .expanded-group {
+    background-color: $light;
+    border-radius: 1rem;
+    position: relative;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.expanded-group-left::before, .expanded-group-right::before {
+    transform: rotate(-45deg);
+    content: '';
+    position: absolute;
+    top: -0.7rem;
+    left: 2.2rem;
+    border-color: $light $light transparent transparent;
+    border-style: solid;
+    border-radius: 0.5rem;
+    border-width: 1rem;
+}
+
+@media (min-width: 768px) {
+    .expanded-group-right::before {
+        left: auto;
+        right: 2.2rem;
+    }
+}
+
+/*
  * Table-order styling for orders
  */
 .table-order {
