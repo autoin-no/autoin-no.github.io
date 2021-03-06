@@ -34,7 +34,7 @@ export function refreshSearchSelects() {
     // TODO: Rewrite to pure JS for Boostrap v5
     $('select.dd-select-search').each(function (i, select) {
         if (!$(this).next().hasClass('dd-select')) {
-            $(this).after('<div class="dd-select ' + ($(this).attr('class') || '') + '" tabindex="0"><span class="current"></span><div class="list"><ul class="list-group list-group-flush"></ul></div></div>');
+            $(this).after('<div class="dd-select ' + ($(this).attr('class') || '') + (select.disabled ? ' disabled' : '' )  + '" tabindex="0"><span class="current"></span><div class="list"><ul class="list-group list-group-flush"></ul></div></div>');
             $('ul', $(this).next()).before('<div class="dd-search"><input autocomplete="off" class="form-control" type="search"></div>');
         } else {
             $('ul li', $(this).next()).remove();
