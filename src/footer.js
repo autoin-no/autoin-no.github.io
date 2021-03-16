@@ -14,18 +14,21 @@ export function refreshButtonSVG() {
         var div = document.createElement('div');
         div.innerHTML = htmlString.trim();
         return div.firstElementChild;
-    };
+    }, svg;
 
     // Inject SVG
     // For custom color themes for processes, done since injecting via CSS does not allow it to auto adjust to font color and size in a easy way
-    var startSvg = "<svg width='1rem' height='1rem' viewBox='0 0 16 16' class='bi bi-play' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z'/></svg>";
-    document.querySelectorAll(".btn-start, .btn-outline-start, .badge-start, .badge-outline-start").forEach(el => el.prepend(_createSVGFromHTMLOnce(startSvg, el), " "));
+    svg = "<svg xmlns='http://www.w3.org/2000/svg' width='1rem' height='1rem' fill='currentColor' class='bi bi-hourglass-split' viewBox='0 0 17 17'><path d='M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z'/></svg>";
+    document.querySelectorAll(".btn-planned, .btn-outline-planned, .badge-planned, .badge-outline-planned").forEach(el => el.prepend(_createSVGFromHTMLOnce(svg, el), " "));
 
-    var stopSvg = "<svg width='1rem' height='1rem' viewBox='0 0 16 16' class='bi bi-arrow-clockwise' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z'/><path fill-rule='evenodd' d='M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z'/></svg>";
-    document.querySelectorAll(".btn-stop, .btn-outline-stop, .badge-stop, .badge-outline-stop").forEach(el => el.prepend(_createSVGFromHTMLOnce(stopSvg, el), " "));
+    svg = "<svg width='1rem' height='1rem' viewBox='0 0 17 17' class='bi bi-play' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z'/></svg>";
+    document.querySelectorAll(".btn-start, .btn-outline-start, .badge-start, .badge-outline-start").forEach(el => el.prepend(_createSVGFromHTMLOnce(svg, el), " "));
 
-    var doneSvg = "<svg width='1rem' height='1rem' viewBox='0 0 16 16' class='bi bi-check2-circle' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z'/><path fill-rule='evenodd' d='M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z'/></svg>";
-    document.querySelectorAll(".btn-done, .btn-outline-done, .badge-done, .badge-outline-done").forEach(el => el.prepend(_createSVGFromHTMLOnce(doneSvg, el), " "));
+    svg = "<svg width='1rem' height='1rem' viewBox='0 0 16 16' class='bi bi-arrow-clockwise' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z'/><path fill-rule='evenodd' d='M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z'/></svg>";
+    document.querySelectorAll(".btn-stop, .btn-outline-stop, .badge-stop, .badge-outline-stop").forEach(el => el.prepend(_createSVGFromHTMLOnce(svg, el), " "));
+
+    svg = "<svg width='1rem' height='1rem' viewBox='0 0 16 16' class='bi bi-check2-circle' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z'/><path fill-rule='evenodd' d='M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z'/></svg>";
+    document.querySelectorAll(".btn-done, .btn-outline-done, .badge-done, .badge-outline-done").forEach(el => el.prepend(_createSVGFromHTMLOnce(svg, el), " "));
 }
 
 

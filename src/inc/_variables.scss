@@ -9,10 +9,12 @@ $green: #2fa54a;
 $light: #f3f3f3;
 // @todo Reconsider this one (this is a dark purple color from original Thomas style, HR wants something else)
 $dark: #23286b;
+$grayish: #999;
 
 
 // Custom themes to semantically define the cases for processes, in order to be able to add icons and more.
 $theme-colors: (
+        "planned": $grayish,
         "start": $blue,
         "stop": $red,
         "done": $green,

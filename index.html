@@ -180,6 +180,7 @@
 
                 <p>The AutoIn theme defines three additional color themes for usage with processes:</p>
                 <ul>
+                    <li><span class="text-muted">btn/badge[-outline]-</span><code>planned</code> - An process that has been planned, but not sent to production yet</li>
                     <li><span class="text-muted">btn/badge[-outline]-</span><code>start</code> - An process that can be started</li>
                     <li><span class="text-muted">btn/badge[-outline]-</span><code>stop</code> - An process that is in progress and can be stopped</li>
                     <li><span class="text-muted">btn/badge[-outline]-</span><code>done</code> - An process that is done</li>
@@ -193,6 +194,8 @@
                         Should be used for badges and buttons as shown with examples below, please don't use for alerts as alerts should convey rather severity like danger/warning/info/sucess after some action.
                         <br><br>
                         For more examples of when to use outline or not see below, for when to use process theme styles: Only for buttons to start/stop product processes.
+                        <br><br>
+                        Buttons for <code>planned</code> tasks (if shown instead of hidden), will always have to be in disabled state. For badges it makes more sense to show them, see below.
                     </p>
                 </div></div>
 
@@ -203,7 +206,7 @@
 
         <div class="row">
             <div id="process-buttons" class="col-sm">
-                <p class="lead">Process Buttons <span class="text-muted">for start/stop/done/* on processes</span>:</p>
+                <p class="lead">Process Buttons <span class="text-muted">for start/stop/done/* on processes/tasks:</span>:</p>
 
 
 
@@ -224,7 +227,7 @@
                 <button type="button" class="btn btn-outline-done" disabled>Done</button>
 -->
                 <br><br><br>
-                <p>Alternatively for Product Process Buttons, large and/or block buttons can be used for optimal tablet usage:</p>
+                <p>Alternatively for Task Process Buttons, large and/or block buttons can be used for optimal tablet usage:</p>
 
                 <button type="button" class="btn btn-start btn-lg btn-block">
                     Start Process
@@ -278,16 +281,48 @@
 
         <div class="row">
             <div id="status-badges" class="col-sm">
-                <p class="lead">Status badges <span class="text-muted">for client/track&trace-users who can't interact with them</span>:</p>
+                <p class="lead">Status badges <span class="text-muted">for company/track&trace-users who can't interact with them</span>:</p>
 
-                <span class="badge badge-outline-start">
+                <span class="badge badge-outline-start mb-1">
                     Lading <span class="text-muted">venter</span>
                 </span>
-                <span class="badge badge-outline-stop">
+                <span class="badge badge-outline-stop mb-1">
                     Lading <span class="text-muted">pågår</span>
                 </span>
-                <span class="badge badge-outline-done">
+                <span class="badge badge-outline-done mb-1">
                     Lading <span class="text-muted">ferdig</span>
+                </span>
+                <span class="badge badge-outline-planned mb-1">
+                    Lading <span class="text-muted">planlagt</span>
+                </span>
+
+                <br><br>
+                <p class="mb-2">Example usage <span class="text-muted"> with link icons to edit for SuperAdmin/TerminalAdmin</span>:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-4">
+                <p class="text-muted mb-0">Oppgaver opprettet: 12.3.2021 kl: 10:53 &nbsp; <a class="" href="#">
+                    <svg class="svg-inline--fa fa-external-link-alt fa-w-16" width="1rem" height="1rem" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 580" data-fa-i2svg=""><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path></svg>
+                </a></p>
+                <span class="badge badge-outline-start mb-1">
+                    Lakkering
+                </span><br>
+                <span class="badge badge-outline-stop mb-1">
+                    Lading
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-4">
+                <p class="text-muted mb-0">'Klargjør for salg' opprettet: 5. Mars 2021 - 09:49  &nbsp; <a class="" href="#">
+                    <svg class="svg-inline--fa fa-external-link-alt fa-w-16" width="1rem" height="1rem" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 580" data-fa-i2svg=""><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path></svg>
+                </a></p>
+                <span class="badge badge-outline-planned mb-1">
+                    Full Shine
+                </span><br>
+                <span class="badge badge-outline-planned mb-1">
+                    Vask
                 </span>
             </div>
         </div>

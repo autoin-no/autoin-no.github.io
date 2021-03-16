@@ -14,9 +14,15 @@ body nav {
 /*
  * BADGE process outline style
  */
-.badge.badge-outline-start, .badge.badge-outline-stop, .badge.badge-outline-done {
+ .badge.badge-outline-planned, .badge.badge-outline-start, .badge.badge-outline-stop, .badge.badge-outline-done {
     width: 100%;
     max-width: 22.5rem;
+}
+
+body .badge.badge-outline-planned {
+    background-color: $white;
+    border: 1px solid $grayish;
+    color: $grayish;
 }
 
 body .badge.badge-outline-start {
