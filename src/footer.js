@@ -68,17 +68,36 @@ $(function () {
 
     // Bulk copy textarea features
     document.body.addEventListener("paste", function(event) {
-        // Exit early if target is not bc-area
-        if (!event.target.classList.contains("bc-area")) {
+        const el = event.target,
+            spaceSeperated = el.classList.contains("bc-area"),
+            commaSeperated = el.classList.contains("bc-input");
+
+        // Exit early if target is not bc-area / bc-input
+        if (!spaceSeperated && !commaSeperated) {
             return;
         }
 
         // OK, lets get the text user wants to paste
         let paste = (event.clipboardData || window.clipboardData).getData('text').normalize().trim();
 
-        // Detect comma seperated string and adapt it to newline seperated format
+        // Detect comma seperated string and adapt it to target format
         if (paste.indexOf("\n") === -1 && paste.indexOf(",") !== -1) {
-            paste = paste.split(",").map(s => s.trim()).join("\n");
+            paste = paste.split(",").map(s => s.trim()).join(spaceSeperated ? "\n" : ",");
+        }
+
+        // Detect table data with more columns then what \n represent (no tabs)
+        let html = event.clipboardData.getData('text/html');
+        if (paste.indexOf("\n") !== -1 && paste.indexOf("\t") === -1 && html && html.indexOf("<table") === 0) {
+            let tmp = document.createElement('div');
+            tmp.innerHTML = html;
+            if (tmp.firstChild.querySelectorAll('tr:first-child td').length === 2) {
+                let pastArr = paste.split("\n");
+                paste = [...Array(Math.ceil(pastArr.length / 2))].map((item, index) => {
+                    if (pastArr.length > (index * 2 +1))
+                        return pastArr[index * 2].trim() + ' ' + pastArr[index * 2 +1].trim();
+                    return pastArr[index * 2].trim();
+                }).join(spaceSeperated ? "\n" : ",");
+            }
         }
 
         // Replace tabs for spaces
@@ -86,16 +105,23 @@ $(function () {
 
         // Detect bullet points (-, •, ..), which on paste seems to get a whitespace after it before value
         if (paste.indexOf(' ') === 1) {
-            paste = paste.split("\n").map(s => s.substring(2)).join("\n");
+            paste = paste.split("\n").map(s => s.substring(2)).join(spaceSeperated ? "\n" : ",");
         }
 
         event.preventDefault();
 
+        // If commaSeperated it's assumed we have directly a input[type=text] field to insert this to
+        if (commaSeperated) {
+            event.target.value = paste;
+            return;
+        }
+
+        // If space seperated, assume either Modal or directly to textarea
         let modal = $('#ExcelModal');
         if (!modal) {
             // Set value
             event.target.innerHTML = paste;
-            return
+            return;
         };
 
         // Place value on data attribute instead of value so it 1. is empty if opnend  again, and 2. as for some reason won't work to set innerHTML a second time
