@@ -87,13 +87,14 @@ $(function () {
 
         // Detect table data with more columns then what \n represent (no tabs)
         let html = event.clipboardData.getData('text/html');
-        if (paste.indexOf("\n") !== -1 && paste.indexOf("\t") === -1 && html && html.indexOf("<table") === 0) {
+        if (paste.indexOf("\n") !== -1 && paste.indexOf("\t") === -1 && html && html.indexOf("<table") !== -1) {
             let tmp = document.createElement('div');
             tmp.innerHTML = html;
-            if (tmp.firstChild.querySelectorAll('tr:first-child td').length === 2) {
+            if (tmp.querySelector('table').querySelectorAll('tr:first-child td').length === 2) {
                 let pastArr = paste.split("\n");
                 paste = [...Array(Math.ceil(pastArr.length / 2))].map((item, index) => {
-                    if (pastArr.length > (index * 2 +1))
+                    // Skip every second row if target is input field, and also if we are at end of length e.g 3 rows where last one only has first cell selected)
+                    if (!commaSeperated && pastArr.length > (index * 2 +1))
                         return pastArr[index * 2].trim() + ' ' + pastArr[index * 2 +1].trim();
                     return pastArr[index * 2].trim();
                 }).join(spaceSeperated ? "\n" : ",");
