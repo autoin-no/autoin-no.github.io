@@ -77,12 +77,14 @@ $(function () {
             return;
         }
 
+        event.preventDefault();
+
         // OK, lets get the text user wants to paste
         let paste = (event.clipboardData || window.clipboardData).getData('text').normalize().trim();
 
         // Detect comma seperated string and adapt it to target format
         if (paste.indexOf("\n") === -1 && paste.indexOf(",") !== -1) {
-            paste = paste.split(",").map(s => s.trim()).join(spaceSeperated ? "\n" : ",");
+            paste = paste.split(",").map(s => s.trim()).join(spaceSeperated ? "\n" : ", ");
         }
 
         // Detect table data with more columns then what \n represent (no tabs)
@@ -97,7 +99,7 @@ $(function () {
                     if (!commaSeperated && pastArr.length > (index * 2 +1))
                         return pastArr[index * 2].trim() + ' ' + pastArr[index * 2 +1].trim();
                     return pastArr[index * 2].trim();
-                }).join(spaceSeperated ? "\n" : ",");
+                }).join(spaceSeperated ? "\n" : ", ");
             }
         }
 
@@ -106,14 +108,15 @@ $(function () {
 
         // Detect bullet points (-, •, ..), which on paste seems to get a whitespace after it before value
         if (paste.indexOf(' ') === 1) {
-            paste = paste.split("\n").map(s => s.substring(2)).join(spaceSeperated ? "\n" : ",");
+            paste = paste.split("\n").map(s => s.substring(2)).join(spaceSeperated ? "\n" : ", ");
         }
-
-        event.preventDefault();
 
         // If commaSeperated it's assumed we have directly a input[type=text] field to insert this to
         if (commaSeperated) {
-            event.target.value = paste;
+            if (/\w+\s*,\s*/.test(el.value))
+                el.value += (/\w+\s*,\s*$/.test(el.value) ? '' : ', ' ) + paste;
+            else
+                el.value = paste;
             return;
         }
 
@@ -121,7 +124,7 @@ $(function () {
         let modal = $('#ExcelModal');
         if (!modal) {
             // Set value
-            event.target.innerHTML = paste;
+            el.innerHTML = paste;
             return;
         };
 
