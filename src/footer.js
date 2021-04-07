@@ -101,15 +101,14 @@ $(function () {
                     return pastArr[index * 2].trim();
                 }).join(spaceSeperated ? "\n" : ", ");
             }
-        }
-
-        // Replace tabs for spaces
-        paste = paste.replace(/\t/g, " ");
-
-        // Detect bullet points (-, •, ..), which on paste seems to get a whitespace after it before value
-        if (paste.indexOf(' ') === 1) {
+        } else if (paste.indexOf(' ') === 1) {
+            // Detect bullet points (-, •, ..), which on paste seems to get a whitespace after it before value
             paste = paste.split("\n").map(s => s.substring(2)).join(spaceSeperated ? "\n" : ", ");
         }
+
+        // Normalize data
+        paste = paste.split("\n").map(s => s.trim()).join(spaceSeperated ? "\n" : ", ");
+        paste = paste.replace(/\t/g, " ");
 
         // If commaSeperated it's assumed we have directly a input[type=text] field to insert this to
         if (commaSeperated) {
