@@ -125,14 +125,20 @@ body label {
     text-shadow: 0 0 $gray-200;
 }
 
-body .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new):not(.btn-sm) {
+body *:not(.dropdown) > .btn:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new):not(.btn-sm) {
     min-width: 11rem;
+}
+
+body .btn:not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new):not(.btn-sm) {
     margin-bottom: 0.2em;
     margin-top: 0.2em;
 }
 
-body .btn-sm:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
+body *:not(.dropdown) > .btn-sm:not(.dropdown-toggle-split):not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
     min-width: 5.5rem;
+}
+
+body .btn-sm:not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-block):not(.btn-new) {
     margin: 0;
 }
 
