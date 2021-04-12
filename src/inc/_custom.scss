@@ -147,9 +147,11 @@ body .btn-sm:not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-bl
     font-weight: 500;
     border-width: 2px;
 }
-// Reset on split dropdown
-.btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn { border-left: 1px;}
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn { border-right: 1px; }
+
+*:not(.btn-sm):not(.btn-lg) + .dropdown-toggle-split {
+    padding-right: 1.133rem;
+    padding-left: 1rem;
+}
 
 /*
  * Process SVG styling on buttons and badges which is injected in JS
