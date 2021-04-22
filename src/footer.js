@@ -40,7 +40,10 @@ export function refreshSearchSelects() {
             $(this).after('<div class="dd-select ' + ($(this).attr('class') || '') + (select.disabled ? ' disabled' : '' )  + '" tabindex="0"><span class="current"></span><div class="list"><ul class="list-group list-group-flush"></ul></div></div>');
             $('ul', $(this).next()).before('<div class="dd-search"><input autocomplete="off" class="form-control" type="search"></div>');
         } else {
-            $('ul li', $(this).next()).remove();
+            // Refresh list
+            var dd = $(this).next();
+            $('ul li', dd).remove();
+            dd.toggleClass('disabled', select.disabled);
         }
 
         // Generate li options based on select options
