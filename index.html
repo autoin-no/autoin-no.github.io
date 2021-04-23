@@ -470,11 +470,37 @@
                     <div class="mb-3">
                       <label for="validationTextarea">Kommentar</label>
                       <textarea class="form-control" id="validationTextarea" placeholder="Eksempel kommentar"></textarea>
-                      <div class="invalid-feedback">Vennligst fyll inn kommentar</div>
                     </div>
 
                     <button class="btn btn-outline-primary" type="submit" title="Register bruker så sant skjema er riktig fyllt inn">Register bruker</button>
                     <a href="#" title="Avbryt og kansellere oppretting av bruker" class="my-2 mx-3 d-block d-md-inline text-center text-md-left">Avbryt</a>
+                </form>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div id="form-fields-validation" class="col-sm">
+                <p class="lead">Email form:</p>
+
+                <form class="needs-validation" novalidate action="mailto:digital@autoin.no" method="get" enctype="multipart/form-data" target="_blank">
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="subject">Type skade og Kjøretøy<span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="subject" name="subject" value="" placeholder="Eksempel: Frontskade på VW Golf" required>
+                      <div class="invalid-feedback">Vennligst fyll inn hva slags skade og bil/kjøretøy du har.</div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="body">Beskrivelse:</label>
+                      <textarea class="form-control" id="body" name="body" rows="6" placeholder="Beskriv din skade, registreringsnummer og ditt navn.
+
+Eventuelt ditt mobilnummer og forsikrings nummer"></textarea>
+                  </div>
+
+                  <input class="btn btn-outline-primary" type="submit" title="Send us an email with this info" value="Be om pris" onclick='let b = document.getElementById("body");b.value = "Description of damage:\n" + b.value + "\n\n---------------\nPictures:\nNB! Vennligst legg ved flere bilder av skaden\n\n" + b.value;' />
+                  <input class="btn btn-link" type="reset" value="Avbryt" />
                 </form>
             </div>
         </div>
