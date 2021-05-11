@@ -214,6 +214,11 @@ select.dd-select-search {
     background-color: $input-disabled-bg;
 }
 
+.dd-select.disabled, .dd-select li:hover:not(.disabled) {
+    cursor: pointer;
+    @include gradient-bg($dropdown-link-hover-bg);
+}
+
 .dd-select li.list-group-item {
     padding: 0.2em $list-group-item-padding-x;
 }

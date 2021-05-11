@@ -35,9 +35,10 @@ export function refreshButtonSVG() {
 // Searchable selects lite, adapted from https://codepen.io/saravanajd/pen/GGPQbY
 export function refreshSearchSelects() {
     // TODO: Rewrite to pure JS for Boostrap v5
+    // TODO: Rewrite to generate dropdown syntax but with selct styling instead of button for root to avoid to much own css logic for this
     $('select.dd-select-search').each(function (i, select) {
         if (!$(this).next().hasClass('dd-select')) {
-            $(this).after('<div class="dd-select ' + ($(this).attr('class') || '') + (select.disabled ? ' disabled' : '' )  + '" tabindex="0"><span class="current"></span><div class="list"><ul class="list-group list-group-flush"></ul></div></div>');
+            $(this).after('<div class="dd-select ' + ($(this).attr('class') || '') + (select.disabled ? ' disabled' : '' )  + '" tabindex="0"><span class="current"></span><div class="list"><ul class="list-group"></ul></div></div>');
             $('ul', $(this).next()).before('<div class="dd-search"><input autocomplete="off" class="form-control" type="search"></div>');
         } else {
             // Refresh list
@@ -166,7 +167,7 @@ $(function () {
         $('.dd-select').not($(this)).removeClass('open');
         if (this.classList.toggle('open')) {// Is now open
             $(this).find('li').attr('tabindex', 0);
-            $('.dd-search input').trigger('focus');
+            $(this).find('.dd-search input').trigger('focus');
         } else {
             $(this).find('li').removeAttr('tabindex');
             $(this).trigger('focus');
