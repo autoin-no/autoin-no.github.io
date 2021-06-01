@@ -11,6 +11,25 @@ body nav {
     .container {max-width: 1200px;}
 }
 
+/* LOGO */
+.logoBrand {
+    font-family: 'Roboto', 'Arial Narrow', sans-serif;
+    text-rendering: geometricPrecision;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.logoBrand .brand1 {
+    color: var(--white);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+}
+.logoBrand .brand2 {
+    color: var(--red);
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
 /*
  * BADGE process outline style
  */

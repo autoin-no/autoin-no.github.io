@@ -8,7 +8,7 @@ $green: #2fa54a;
 
 $light: #f3f3f3;
 // @todo Reconsider this one (this is a dark purple color from original Thomas style, HR wants something else)
-$dark: #23286b;
+$dark: #23286b;//Default is $gray-800: #343a40
 $grayish: #999;
 
 
@@ -70,4 +70,5 @@ $alert-color-level: 0;
 $close-text-shadow: none;
 $close-font-weight: $font-weight-base;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+// Poppins & Roboto (logo) fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,400;0,500&display=swap');
