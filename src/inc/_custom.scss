@@ -14,6 +14,8 @@ body nav {
 /*
  * BADGE process outline style
  */
+a .badge { padding: 0.2em 0.35em; }
+
  .badge.badge-outline-planned, .badge.badge-outline-start, .badge.badge-outline-stop, .badge.badge-outline-done {
     width: 100%;
     max-width: 22.5rem;
