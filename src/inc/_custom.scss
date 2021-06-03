@@ -13,11 +13,13 @@ body nav {
 
 /* LOGO */
 .logoBrand {
-    font-family: 'Roboto', 'Arial Narrow', sans-serif;
+    /*font-family: 'Roboto', 'Arial Narrow', sans-serif;*/
     text-rendering: geometricPrecision;
     font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size-adjust: 0.5;
+    font-kerning: normal;
 }
 .logoBrand .brand1 {
     color: var(--white);
