@@ -78,7 +78,7 @@ $(function () {
 
         // Exit early if target is not bc-area / bc-input
         if (!spaceSeperated && !commaSeperated) {
-            return;
+            return true;
         }
 
         event.preventDefault();
@@ -120,7 +120,7 @@ $(function () {
                 el.value += (/\w+\s*,\s*$/.test(el.value) ? '' : ', ' ) + paste;
             else
                 el.value = paste;
-            return;
+            return true;
         }
 
         // If space seperated, assume either Modal or directly to textarea
@@ -128,7 +128,7 @@ $(function () {
         if (!modal) {
             // Set value
             el.innerHTML = paste;
-            return;
+            return true;
         };
 
         // Place value on data attribute instead of value so it 1. is empty if opnend  again, and 2. as for some reason won't work to set innerHTML a second time
@@ -162,7 +162,7 @@ $(function () {
     // Open/close
     $(document).on('click', '.dd-select', function (event) {
         if(event.target.type === 'search') {
-            return;
+            return true;
         }
         $('.dd-select').not($(this)).removeClass('open');
         if (this.classList.toggle('open')) {// Is now open
