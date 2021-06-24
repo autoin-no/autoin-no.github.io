@@ -189,6 +189,7 @@ body .btn-sm:not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-bl
     animation: rotation 5s 1 ease;
 }
 
+.af-rotate,
 .btn:not(:disabled):not(.disabled):hover svg.bi-arrow-clockwise,
 .btn:not(:disabled):not(.disabled):focus svg.bi-arrow-clockwise {
     animation: rotation 5s infinite ease;
@@ -203,6 +204,7 @@ body .btn-sm:not(.btn-link):not(.btn-toggle):not(.btn-toggle-circle):not(.btn-bl
     }
 }
 
+.af-shake,
 .btn:not(:disabled):not(.disabled):hover svg.bi-play, .btn:not(:disabled):not(.disabled):focus svg.bi-play {
     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
 }
