@@ -135,6 +135,10 @@ body .badge .text-muted, body .btn .text-muted {
         td:last-child, th:last-child {
             border-right: 0 !important;
         }
+
+        td a {
+            display: block;
+        }
     }
 }
 
