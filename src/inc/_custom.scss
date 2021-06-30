@@ -22,12 +22,12 @@ body nav {
     font-kerning: normal;
 }
 .logoBrand .brand1 {
-    color: var(--white);
+    color: $white;
     font-weight: 400;
     letter-spacing: 0.05rem;
 }
 .logoBrand .brand2 {
-    color: var(--red);
+    color: $red;
     font-weight: 500;
     letter-spacing: 0.1rem;
 }
@@ -76,12 +76,25 @@ body .badge .text-muted, body .btn .text-muted {
  * Fieldset expanded styling, for dynamically injected group of fields.
  */
 
-.expanded-group-left, .expanded-group-right, .expanded-group {
-    background-color: $light;
+.expanded-group-left, .expanded-group-right, .expanded-group, .expanded-group-outline {
     border-radius: 1rem;
     position: relative;
     padding: 1.5rem;
     margin: 1rem 0;
+
+    .col-form-label {
+        padding: 0 0.1rem;
+    }
+}
+
+.expanded-group-left, .expanded-group-right, .expanded-group {
+    background-color: $light;
+}
+
+.expanded-group-outline {
+    border-width: 0.1rem;
+    border-color: $grayish;
+    border-style: dashed solid;
 }
 
 .expanded-group-left::before, .expanded-group-right::before {

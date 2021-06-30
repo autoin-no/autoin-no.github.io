@@ -464,47 +464,56 @@
                       <div class="invalid-feedback">Vennligst fyll inn ett firmanavn.</div>
                     </div>
                   </div>
-                <fieldset class="form-group expanded-group-right row">
-                <legend class="col-form-label col-sm-2 float-sm-left">Bruker data</legend>
-                <div class="col-sm-10">
-                  <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                      <label for="validationCustom03">Stedsnavn</label>
-                      <input type="text" class="form-control" id="validationCustom03" required>
-                      <div class="invalid-feedback">Vennligst fyll riktig stedsnavn.</div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                      <label for="validationCustom05">Postnummer</label>
-                      <input type="number" class="form-control" id="validationCustom05" min="1" max="9999"required>
-                      <div class="invalid-feedback">Vennligst fyll ut ett gyldig postnummer.</div>
-                    </div>
-                      <div class="col-md-3 mb-3">
-                        <label for="validationCustom04">Kontaktperson</label>
-                        <select class="custom-select" id="validationCustom04" required>
-                          <option selected disabled value="">Velg en:</option>
-                          <option>Tore</option>
-                          <option>Harald</option>
-                          <option>Anders</option>
-                        </select>
-                        <div class="invalid-feedback">Vennligst velg en kontaktperson.</div>
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1" required>
-                        <label class="custom-control-label" for="customCheck1">Jeg godkjenner bruk av mine data</label>
-                        <div class="invalid-feedback">Du må godkjenne lisensvilkårene for å kunne opprette bruker</div>
-                      </div>
-                  </div>
-                </div>
-                </fieldset>
+                    <fieldset class="form-group expanded-group-right row">
+                        <legend class="col-form-label col-sm-2 float-sm-left">Bruker data</legend>
+                        <div class="col-sm-10">
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationCustom03">Stedsnavn</label>
+                                    <input type="text" class="form-control" id="validationCustom03" required>
+                                    <div class="invalid-feedback">Vennligst fyll riktig stedsnavn.</div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationCustom05">Postnummer</label>
+                                    <input type="number" class="form-control" id="validationCustom05" min="1" max="9999"required>
+                                    <div class="invalid-feedback">Vennligst fyll ut ett gyldig postnummer.</div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationCustom04">Kontaktperson</label>
+                                    <select class="custom-select" id="validationCustom04" required>
+                                        <option selected disabled value="">Velg en:</option>
+                                        <option>Tore</option>
+                                        <option>Harald</option>
+                                        <option>Anders</option>
+                                    </select>
+                                    <div class="invalid-feedback">Vennligst velg en kontaktperson.</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+                                    <label class="custom-control-label" for="customCheck1">Jeg godkjenner bruk av mine data</label>
+                                    <div class="invalid-feedback">Du må godkjenne lisensvilkårene for å kunne opprette bruker</div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
                     <div class="mb-3">
                       <label for="validationTextarea">Kommentar</label>
                       <textarea class="form-control" id="validationTextarea" placeholder="Eksempel kommentar"></textarea>
                     </div>
 
-                    <button class="btn btn-outline-primary" type="submit" title="Register bruker så sant skjema er riktig fyllt inn">Register bruker</button>
-                    <a href="#" title="Avbryt og kansellere oppretting av bruker" class="my-2 mx-3 d-block d-md-inline text-center text-md-left">Avbryt</a>
+                    <div class="d-flex justify-content-between align-content-center">
+                        <div class="col-md-4 align-self-center">
+                            <button class="btn btn-primary" type="submit" title="Register bruker så sant skjema er riktig fyllt inn">Register bruker</button>
+                            <a href="#" title="Avbryt og kansellere oppretting av bruker" class="my-2 mx-3 d-block d-md-inline text-center text-md-left">Avbryt</a>
+                        </div>
+
+                        <fieldset class="form-group expanded-group-outline col-md-7">
+                            <legend class="col-form-label col-sm-auto">Administrasjons snarveier</legend>
+                            <button class="btn btn-outline-done" type="submit" title="Some admin kan du sette bruker som allrede aktivert">Marker som allerede aktivert</button>
+                        </fieldset>
+                    </div>
                 </form>
             </div>
         </div>
